@@ -30,6 +30,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "psycopg2-binary"
+version = "2.9.10"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "sqlparse"
 version = "0.5.3"
 description = "A non-validating SQL parser."
@@ -51,7 +59,7 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "tzdata"
-version = "2024.2"
+version = "2025.1"
 description = "Provider of IANA time zone data"
 category = "main"
 optional = false
@@ -60,11 +68,12 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "0d92b273d733589a4d1ecb72a13a4bceb1def0a3d5387443d954c9fa4ba4be5c"
+content-hash = "bb56302ebe164322c9b55a39bcf84ba5ab1a3f28b458ea681d01c61bceec42d5"
 
 [metadata.files]
 asgiref = []
 django = []
+psycopg2-binary = []
 sqlparse = []
 typing-extensions = []
 tzdata = []
