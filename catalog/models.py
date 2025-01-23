@@ -3,7 +3,7 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(
-        max_length="100",
+        max_length=100,
         verbose_name="Наименование",
         help_text="Введите наименование продукта",
     )
@@ -32,7 +32,7 @@ class Product(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(
-        auto_now_=True, verbose_name="Дата последнего изменения"
+        auto_now=True, verbose_name="Дата последнего изменения"
     )
 
     class Meta:
@@ -46,7 +46,7 @@ class Product(models.Model):
 
 class Category(models.Model):
     name = models.CharField(
-        max_length="100",
+        max_length=100,
         verbose_name="Наименование",
         help_text="Введите наименование категории",
     )
