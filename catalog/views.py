@@ -13,6 +13,6 @@ def contacts(request):
 
 
 def product_detail(request, pk):
-    product = Product.objects.get(pk=pk)
+    product = get_object_or_404(Product, pk=product_id)
     context = {"product": product}
     return render(request, "product_detail.html", context)
