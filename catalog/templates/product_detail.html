@@ -4,30 +4,27 @@
 
 <div class="container">
     <div class="row text-center">
-        {% for product in products %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
-
                 <img src="{{ product.photo | media_filter}}">
-
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">{{product.name}}</h4>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">{{product.price}}</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li>- {{ product.description|truncatechars:100 }}</li>
+                        <li>- {{ product.description}}</li>
                         <li>- {{ product.category }}</li>
+                        <li>- {{ product.created_at }}</li>
+                        <li>- {{ product.updated_at }}</li>
                     </ul>
-                    <a href="{% url 'catalog:product_detail' product.pk %}">
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</button>
+                     <a href="{% url 'catalog:home' %}">
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Назад</button>
                     </a>
-
                 </div>
 
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock content %}
