@@ -23,7 +23,6 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
     model = Product
 
-
 class ProductCreateView(CreateView):
     model = Product
     fields = ("name", "description", "photo", "category", "price")
