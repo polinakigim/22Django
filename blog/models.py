@@ -16,7 +16,7 @@ class Blog(models.Model):
         verbose_name="Фото",
         help_text="Загрузите фото",
     )
-    number_of_views = models.IntegerField(
+    number_of_views = models.PositiveIntegerField(
         verbose_name='Колличество просмотров', default=0
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
@@ -24,7 +24,7 @@ class Blog(models.Model):
         auto_now=True, verbose_name="Дата последнего изменения"
     )
 
-    publication_attribute = models.BooleanField(verbose_name='Признак публикации')
+    is_publication = models.BooleanField(verbose_name='Признак публикации')
 
     class Meta:
         verbose_name = "Блог"
