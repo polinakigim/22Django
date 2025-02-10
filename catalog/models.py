@@ -2,11 +2,7 @@ from django.db import models
 
 
 class Product(models.Model):
-    name = models.CharField(
-        max_length=100,
-        verbose_name="Наименование",
-        help_text="Введите наименование продукта",
-    )
+    name = models.CharField(max_length=100, verbose_name="Наименование")
     description = models.TextField(
         blank=True, null=True, verbose_name="Описание продукта"
     )
@@ -21,15 +17,12 @@ class Product(models.Model):
         "Category",
         max_length="100",
         verbose_name="Категория",
-        help_text="Введите категорию",
         on_delete=models.SET_NULL,
         blank=True,
         null=True,
         related_name="products",
     )
-    price = models.IntegerField(
-        verbose_name="Цена за покупку", help_text="Введите цену за штуку товара"
-    )
+    price = models.IntegerField(verbose_name="Цена за покупку")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(
         auto_now=True, verbose_name="Дата последнего изменения"
