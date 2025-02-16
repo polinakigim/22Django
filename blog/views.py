@@ -10,12 +10,12 @@ class BlogListView(ListView):
     template_name = "blog/blog_list.html"
 
     def get_queryset(self):
-        return super().get_queryset().filter(publication_attribute=True)
+        return super().get_queryset().filter(is_publication=True)
 
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ("title", "content", "image", "publication_attribute")
+    fields = ("title", "content", "image", "is_publication")
     success_url = reverse_lazy("blog:blog_list")
 
 
