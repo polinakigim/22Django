@@ -70,3 +70,9 @@ class ProductForm(ModelForm):
             if banned_word == description.lower():
                 raise ValidationError(f"Недопустимые слова")
         return description
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ["publication_status"]

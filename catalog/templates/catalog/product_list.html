@@ -19,16 +19,17 @@
                         <li>- {{ product.description|truncatechars:100 }}</li>
                         <li>- {{ product.category }}</li>
                     </ul>
-                    <a href="{% url 'catalog:product_detail' product.pk %}">
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</button>
-                    </a>
+                    {% if perms.product.can_unpublish_product or user == product.owner %}
                     <a href="{% url 'catalog:product_update' product.pk %}">
                         <button type="button" class="btn btn-lg btn-block btn-outline-primary">Редактировать</button>
                     </a>
                     <a href="{% url 'catalog:product_delete' product.pk %}">
                         <button type="button" class="btn btn-lg btn-block btn-outline-danger">Удалить</button>
                     </a>
-
+                    {% endif %}
+                    <a href="{% url 'catalog:product_detail' product.pk %}">
+                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Подробнее</button>
+                    </a>
 
 
                 </div>
