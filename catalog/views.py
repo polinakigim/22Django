@@ -1,13 +1,10 @@
-from catalog.models import Product
-from django.views.generic import (
-    TemplateView,
-    ListView,
-    DetailView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-)
 from django.urls import reverse_lazy
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  TemplateView, UpdateView)
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from catalog.forms import ProductForm
+from catalog.models import Product
 
 
 class ContactsTemplateView(TemplateView):
@@ -23,15 +20,16 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
     model = Product
 
-class ProductCreateView(CreateView):
+
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
-    fields = ("name", "description", "photo", "category", "price")
+    form_class = ProductForm
     success_url = reverse_lazy("catalog:product_list")
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
-    fields = ("name", "description", "photo", "category", "price")
+    form_class = ProductForm
     success_url = reverse_lazy("catalog:product_list")
 
 

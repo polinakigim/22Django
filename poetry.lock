@@ -76,14 +76,14 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "django"
-version = "5.1.5"
+version = "4.2.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
-python-versions = ">=3.10"
+python-versions = ">=3.8"
 
 [package.dependencies]
-asgiref = ">=3.8.1,<4"
+asgiref = ">=3.6.0,<4"
 sqlparse = ">=0.3.1"
 tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 
@@ -147,6 +147,18 @@ test = ["pytest", "pytest-asyncio (<0.22)", "testpath", "pickleshare", "packagin
 test-extra = ["ipython", "curio", "matplotlib (!=3.2.0)", "nbformat", "numpy (>=1.23)", "pandas", "trio"]
 matplotlib = ["matplotlib"]
 all = ["ipython", "ipython"]
+
+[[package]]
+name = "isort"
+version = "6.0.0"
+description = "A Python utility / library to sort Python imports."
+category = "main"
+optional = false
+python-versions = ">=3.9.0"
+
+[package.extras]
+colors = ["colorama"]
+plugins = ["setuptools"]
 
 [[package]]
 name = "jedi"
@@ -375,7 +387,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "4525cbc6128749a37be2f2b4a9312fff713ab7419575298b8819d1133c4a3c8a"
+content-hash = "2f5bccd708298a44d74bd17d7cd6e1ac3ffc3112f34227fadf38ab82ea2a7996"
 
 [metadata.files]
 asgiref = []
@@ -388,6 +400,7 @@ django = []
 exceptiongroup = []
 executing = []
 ipython = []
+isort = []
 jedi = []
 matplotlib-inline = []
 mypy-extensions = []
