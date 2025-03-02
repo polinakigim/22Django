@@ -12,6 +12,7 @@ pillow = "^11.1.0"
 ipython = "^8.31.0"
 isort = "^6.0.0"
 Django = "4.2.2"
+redis = "^5.2.1"
 
 [tool.poetry.dev-dependencies]
 

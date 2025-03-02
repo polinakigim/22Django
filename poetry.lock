@@ -25,6 +25,14 @@ astroid = ["astroid (>=2,<4)"]
 test = ["astroid (>=2,<4)", "pytest", "pytest-cov", "pytest-xdist"]
 
 [[package]]
+name = "async-timeout"
+version = "5.0.1"
+description = "Timeout context manager for asyncio programs"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "black"
 version = "24.10.0"
 description = "The uncompromising code formatter."
@@ -313,6 +321,21 @@ python-versions = ">=3.8"
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
+name = "redis"
+version = "5.2.1"
+description = "Python client for Redis database and key-value store"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+async-timeout = {version = ">=4.0.3", markers = "python_full_version < \"3.11.3\""}
+
+[package.extras]
+hiredis = ["hiredis (>=3.0.0)"]
+ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==23.2.1)", "requests (>=2.31.0)"]
+
+[[package]]
 name = "sqlparse"
 version = "0.5.3"
 description = "A non-validating SQL parser."
@@ -387,11 +410,12 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "2f5bccd708298a44d74bd17d7cd6e1ac3ffc3112f34227fadf38ab82ea2a7996"
+content-hash = "533820729c4bb3cf1a6328c2082b07e06ed134f5e95e379ad76d6baec4152405"
 
 [metadata.files]
 asgiref = []
 asttokens = []
+async-timeout = []
 black = []
 click = []
 colorama = []
@@ -415,6 +439,7 @@ psycopg2-binary = []
 ptyprocess = []
 pure-eval = []
 pygments = []
+redis = []
 sqlparse = []
 stack-data = []
 tomli = []
